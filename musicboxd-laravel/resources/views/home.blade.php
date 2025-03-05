@@ -1,0 +1,81 @@
+{{-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Page</title>
+</head>
+
+<body>
+    <h1>musicboxd-laravel\resources\views\home.blade.php</h1>
+</body>
+
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mySpotiboxd - Home</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- Inclui Tailwind via Vite -->
+    <meta name="description" content="mySpotiboxd - Sua plataforma para avaliar músicas e álbuns.">
+    <meta name="keywords" content="música, álbuns, avaliações, resenhas, mySpotiboxd, artistas, playlists, críticas, reviews, notas, comentários, música online">
+    <meta name="author" content="HKLRW">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow p-4 flex justify-between items-center">
+        <div class="logo text-2xl font-bold">mySpotiboxd</div>
+        <div class="search-bar flex gap-2">
+            <input type="text" class="border rounded p-2" placeholder="Pesquisar músicas, álbuns ou artistas...">
+            <button class="bg-blue-500 text-white p-2 rounded">Pesquisar</button>
+        </div>
+        <div class="user-options flex gap-2">
+            Bem-vindo, {{ auth()->user()->name }} |
+            <a href="{{ route('profile.show') }}" class="text-blue-500">Meu Perfil</a> |
+            <a href="{{ url('/reviews/create') }}" class="text-blue-500">Adicionar</a> |
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button type="submit" class="text-blue-500">Sair</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto mt-6">
+        <section class="feed">
+            <h1 class="text-2xl font-bold mb-4">Atividades recentes</h1>
+            @foreach ($reviews as $review)
+                <div class="post bg-white p-4 mb-4 rounded shadow flex gap-4">
+                    <img src="https://placehold.co/50" alt="Capa do álbum">
+                    <div class="post-content flex-1">
+                        <p>
+                            <strong>{{ $review->user->name }}</strong> deu {{ $review->rating }} ★ para
+                            "{{ $review->song->title }}" - {{ $review->song->artist }}
+                        </p>
+                        <p class="review text-gray-600">"{{ $review->review ?? 'Sem comentário' }}"</p>
+                        <span class="timestamp text-sm text-gray-500">
+                            {{ $review->date->format('d/m/Y H:i') }}
+                        </span>
+                        @if ($review->user_id == auth()->id())
+                            <div class="mt-2">
+                                <a href="{{ url('/reviews/' . $review->id . '/edit') }}" class="text-blue-500 text-sm">Editar</a>
+                                <form method="POST" action="{{ url('/reviews/' . $review->id) }}" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 text-sm" onclick="return confirm('Tem certeza que quer excluir esta avaliação?')">Excluir</button>
+                                </form>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            @endforeach
+        </section>
+    </main>
+
+    <footer class="text-center py-4 text-gray-600">
+        <p>© 2025 mySpotiboxd - Feito por HKLRW</p>
+    </footer>
+</body>
+</html>
