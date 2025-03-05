@@ -12,20 +12,19 @@
     <meta name="author" content="HKLRW">
     <style>
         :root {
-            --primary-color: #ff6347;
-            --secondary-color: #2c3e50;
-            --text-color: #2c3e50;
-            --light-bg-color: #ecf0f1;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            --hover-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            --primary-color: #007BFF;
+            --secondary-color: #1C1C1C;
+            --text-color: #1C1C1C;
+            --light-bg-color: #F8F9FA;
+            --border-radius: 4px;
+            --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* font-family: 'Roboto', sans-serif; */
             font-family: Helvetica, Arial, sans-serif;
         }
 
@@ -33,7 +32,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
             background-color: var(--secondary-color);
             color: white;
         }
@@ -46,10 +45,9 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .rating-stars {
             display: inline-flex;
-            color: #f1c40f;
+            color: #FFD700;
         }
 
         .rating-stars .star {
@@ -59,11 +57,12 @@
         .post {
             transition: box-shadow 0.3s, background-color 0.3s;
             border: 1px solid #e0e0e0;
+            background-color: var(--light-bg-color);
         }
 
         .post:hover {
             box-shadow: var(--hover-shadow);
-            background-color: #f5f6f5;
+            background-color: #E9ECEF;
         }
 
         .edit-btn,
@@ -84,18 +83,14 @@
         }
 
         .search-bar input {
-            color: #2c3e50;
-            /* Cor do texto */
+            color: var(--text-color);
             background-color: #ffffff;
-            /* Cor de fundo */
         }
-
-
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: rgba(44, 62, 80, 0.8);
+            background-color: var(--secondary-color);
             color: white;
             position: fixed;
             bottom: 0;
@@ -105,7 +100,7 @@
         }
 
         footer:hover {
-            background-color: var(--secondary-color);
+            background-color: #333333;
         }
 
         main {

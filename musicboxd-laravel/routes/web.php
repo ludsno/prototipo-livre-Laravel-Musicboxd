@@ -43,7 +43,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Rota do Dashboard (autenticada e verificada)
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Rota de busca (pública, fora do grupo auth)
