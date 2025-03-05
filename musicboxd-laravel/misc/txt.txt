@@ -1,0 +1,11 @@
+ -- Este arquivo é "plain text" (".txt") e contém somente alguns textos avulsos --
+
+php artisan serve
+
+npm install --legacy-peer-deps && npm run dev
+
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install --legacy-peer-deps
+npm run dev
+php artisan migrate
