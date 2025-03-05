@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>musicboxd-laravel\resources\views\home.blade.php</h1>
+    <h1>musicboxd-laravel\resources\views\my-page.blade.php</h1>
 </body>
 
 </html> --}}
@@ -19,15 +19,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mySpotiboxd - Home</title>
+    <title>MusicBoxd - Home</title>
     @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- Inclui Tailwind via Vite -->
-    <meta name="description" content="mySpotiboxd - Sua plataforma para avaliar músicas e álbuns.">
-    <meta name="keywords" content="música, álbuns, avaliações, resenhas, mySpotiboxd, artistas, playlists, críticas, reviews, notas, comentários, música online">
+    <meta name="description" content="MusicBoxd - Sua plataforma para avaliar músicas e álbuns.">
+    <meta name="keywords" content="música, álbuns, avaliações, resenhas, MusicBoxd, artistas, playlists, críticas, reviews, notas, comentários, música online">
     <meta name="author" content="HKLRW">
 </head>
 <body class="bg-gray-100">
     <header class="bg-white shadow p-4 flex justify-between items-center">
-        <div class="logo text-2xl font-bold">mySpotiboxd</div>
+        <div class="logo text-2xl font-bold">MusicBoxd</div>
         <div class="search-bar flex gap-2">
             <input type="text" class="border rounded p-2" placeholder="Pesquisar músicas, álbuns ou artistas...">
             <button class="bg-blue-500 text-white p-2 rounded">Pesquisar</button>
@@ -75,7 +75,7 @@
     </main>
 
     <footer class="text-center py-4 text-gray-600">
-        <p>© 2025 mySpotiboxd - Feito por HKLRW</p>
+        <p>© 2025 MusicBoxd - Feito por HKLRW</p>
     </footer>
 </body>
 </html>

@@ -9,6 +9,7 @@
 //     //
 // }
 
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -16,6 +17,10 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     protected $fillable = ['rating', 'review', 'date', 'user_id', 'song_id'];
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
 
     public function user()
     {
