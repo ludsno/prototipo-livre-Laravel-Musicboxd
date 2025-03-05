@@ -1,3 +1,3 @@
 # prototipo-livre-Laravel-Musicboxd
- 
-![image](https://github.com/user-attachments/assets/06a9a135-a2fb-4b6c-ab13-cb1c1a9aaafc)
+
+ ![image](https://github.com/user-attachments/assets/5795fea2-e20b-4382-a18c-ef36294785f5)
