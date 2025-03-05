@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta name="description" content="MusicBoxd - Sua plataforma para avaliar músicas e álbuns.">
     <meta name="keywords"
-        content="música, álbuns, avaliações, resenhas, MusicBoxd, artistas, playlists, críticas, reviews, notas, comentários, música online">
+        content="música, álbuns, avaliações, resenhas,MusicBoxd, artistas, playlists, críticas, reviews, notas, comentários, música online">
     <meta name="author" content="HKLRW">
     <style>
         :root {
@@ -25,7 +25,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            /* font-family: 'Roboto', sans-serif; */
+            font-family: Helvetica, Arial, sans-serif;
         }
 
         header {
@@ -82,6 +83,15 @@
             font-size: 14px;
         }
 
+        .search-bar input {
+            color: #2c3e50;
+            /* Cor do texto */
+            background-color: #ffffff;
+            /* Cor de fundo */
+        }
+
+
+
         footer {
             text-align: center;
             padding: 10px;
@@ -115,76 +125,76 @@
 
         @media (max-width: 640px) {
             header {
-            flex-direction: column;
-            padding: 10px;
-            gap: 10px;
+                flex-direction: column;
+                padding: 10px;
+                gap: 10px;
             }
 
             .search-bar {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
             }
 
             .search-bar input {
-            width: 100%;
-            max-width: none;
+                width: 100%;
+                max-width: none;
             }
 
             .search-bar button {
-            width: 100%;
+                width: 100%;
             }
 
             .user-options {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
             }
 
             main {
-            padding-top: 10px;
-            padding-bottom: 20px;
+                padding-top: 10px;
+                padding-bottom: 20px;
             }
 
             .feed {
-            padding: 0 10px;
+                padding: 0 10px;
             }
 
             .post {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 12px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px;
             }
 
             .post img {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 10px;
+                width: 48px;
+                height: 48px;
+                margin-bottom: 10px;
             }
 
             .post-content p {
-            font-size: 16px;
+                font-size: 16px;
             }
 
             .post-content .timestamp {
-            font-size: 12px;
+                font-size: 12px;
             }
 
             .form-container {
-            padding: 12px;
+                padding: 12px;
             }
 
             .form-container select,
             .form-container input,
             .form-container textarea {
-            padding: 8px;
+                padding: 8px;
             }
 
             footer {
-            position: relative;
-            margin-top: 20px;
+                position: relative;
+                margin-top: 20px;
             }
         }
     </style>
@@ -192,7 +202,7 @@
 
 <body class="bg-gray-100">
     <header>
-        <div class="logo">MusicBoxd</div>
+        <a href="{{ url('/') }}" class="logo"><strong>Music</strong>Boxd</a>
         <div class="search-bar">
             <form action="{{ route('search') }}" method="GET" class="flex gap-2">
                 <input type="text" name="q" class="p-2 w-72 rounded-lg border border-gray-300"
